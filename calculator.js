@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
+// Start of Calculator
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/index.html");
   });
@@ -20,6 +22,10 @@ app.post('/', (req, res) => {
     res.send("Here is the result of your calculation " + result);
   });
 
+  // End of Calculator
+
+  // Start of BMI Calculator
+
   app.get('/bmicalculator', (req, res) => {
     res.sendFile(__dirname + "/bmiCalculator.html");
   });
@@ -33,6 +39,8 @@ app.post('/bmicalculator', (req, res) => {
   
     res.send("Here is the result of your BMI calculation " + bmi);
   });
+
+   // End of BMI Calculator
 
   app.get('/about', (req, res) => {
     res.send('<h1>This is a simple calculator created by Romane Orlando Robb.</h1>');
