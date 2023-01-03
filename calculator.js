@@ -20,6 +20,20 @@ app.post('/', (req, res) => {
     res.send("Here is the result of your calculation " + result);
   });
 
+  app.get('/bmicalculator', (req, res) => {
+    res.sendFile(__dirname + "/bmiCalculator.html");
+  });
+
+app.post('/bmicalculator', (req, res) => {
+
+  var weight = parseFloat(req.body.weight);
+  var height = parseFloat(req.body.height);
+
+  var bmi = weight / (height * height);
+  
+    res.send("Here is the result of your BMI calculation " + bmi);
+  });
+
   app.get('/about', (req, res) => {
     res.send('<h1>This is a simple calculator created by Romane Orlando Robb.</h1>');
   });
