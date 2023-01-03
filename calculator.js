@@ -17,7 +17,7 @@ app.post('/', (req, res) => {
 
   var result = num1 + num2;
   
-    res.send('<h1>"Here is the result of your calculation " + result</h1>');
+    res.send("Here is the result of your calculation " + result);
   });
 
   app.get('/about', (req, res) => {
